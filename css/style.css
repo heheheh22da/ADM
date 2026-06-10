@@ -1,0 +1,1132 @@
+/* ========================================
+   RESET
+======================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#f7f9fc;
+    color:#1e293b;
+    overflow-x:hidden;
+}
+
+/* ========================================
+   CORES
+======================================== */
+
+:root{
+
+    --primary:#0D3B66;
+    --secondary:#F4B400;
+    --dark:#08141F;
+    --light:#F7F9FC;
+    --white:#FFFFFF;
+    --success:#25D366;
+
+}
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+#header{
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+    transition:.4s;
+
+    padding:20px 0;
+
+}
+
+#header.scrolled{
+
+    background:rgba(13,59,102,.96);
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+#header .container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.logo{
+
+    height:70px;
+
+}
+
+#nav{
+
+    display:flex;
+
+    gap:35px;
+
+}
+
+#nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+#nav a:hover{
+
+    color:var(--secondary);
+
+}
+
+.header-buttons{
+
+    display:flex;
+
+    gap:12px;
+
+    align-items:center;
+
+}
+
+.instagram-btn{
+
+    width:45px;
+
+    height:45px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.12);
+
+    color:white;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.instagram-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.header-whatsapp{
+
+    background:var(--success);
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:12px 18px;
+
+    border-radius:12px;
+
+    font-weight:700;
+
+}
+
+#menu-btn{
+
+    display:none;
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:1.6rem;
+
+    cursor:pointer;
+
+}
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero{
+
+    min-height:100vh;
+
+    position:relative;
+
+    background:
+    url("../assets/hero-bg.jpg")
+    center center/cover;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(8,20,31,.92),
+    rgba(13,59,102,.80)
+    );
+
+}
+
+.hero-container{
+
+    position:relative;
+
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:1fr 400px;
+
+    gap:50px;
+
+    align-items:center;
+
+}
+
+.hero-badge{
+
+    display:inline-block;
+
+    background:var(--secondary);
+
+    color:black;
+
+    padding:10px 20px;
+
+    border-radius:999px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+.hero-content h1{
+
+    color:white;
+
+    font-size:4rem;
+
+    line-height:1.1;
+
+    margin-bottom:20px;
+
+}
+
+.hero-content p{
+
+    color:white;
+
+    opacity:.9;
+
+    font-size:1.15rem;
+
+    max-width:650px;
+
+    margin-bottom:35px;
+
+}
+
+/* ========================================
+   HERO BUTTONS
+======================================== */
+
+.hero-actions{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.btn-primary{
+
+    background:white;
+
+    color:black;
+
+    text-decoration:none;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px 20px;
+
+    border-radius:18px;
+
+    transition:.3s;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.15);
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.btn-primary img{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+.btn-primary div{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.btn-primary strong{
+
+    font-size:1rem;
+
+}
+
+.btn-primary span{
+
+    color:#666;
+
+    font-size:.9rem;
+
+}
+
+.btn-secondary{
+
+    background:transparent;
+
+    border:2px solid white;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:18px 25px;
+
+    border-radius:18px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.btn-secondary:hover{
+
+    background:white;
+
+    color:black;
+
+}
+
+/* ========================================
+   HERO CARD
+======================================== */
+
+.hero-card{
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    padding:35px;
+
+    border-radius:25px;
+
+    color:white;
+
+}
+
+.card-top{
+
+    color:#8BFFAE;
+
+    margin-bottom:15px;
+
+    font-weight:700;
+
+}
+
+.hero-card h3{
+
+    font-size:1.8rem;
+
+    margin-bottom:10px;
+
+}
+
+.hero-card p{
+
+    opacity:.9;
+
+    margin-bottom:25px;
+
+}
+
+.card-whatsapp{
+
+    display:block;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    background:var(--success);
+
+    color:white;
+
+    padding:15px;
+
+    border-radius:14px;
+
+    font-weight:700;
+
+}
+/* ========================================
+   ESTATÍSTICAS
+======================================== */
+
+.stats{
+
+    background:white;
+
+    padding:90px 0;
+
+}
+
+.stats .container{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+.stat-box{
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:24px;
+
+    text-align:center;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.stat-box:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.stat-box h2{
+
+    font-size:3rem;
+
+    color:var(--primary);
+
+    margin-bottom:10px;
+
+}
+
+.stat-box p{
+
+    color:#64748b;
+
+}
+
+/* ========================================
+   TITULOS
+======================================== */
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.section-title span{
+
+    color:var(--secondary);
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+}
+
+.section-title h2{
+
+    font-size:2.8rem;
+
+    margin-top:10px;
+
+}
+
+/* ========================================
+   SERVIÇOS
+======================================== */
+
+.services{
+
+    padding:120px 0;
+
+}
+
+.services-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+
+}
+
+.service-card{
+
+    background:white;
+
+    padding:40px 30px;
+
+    border-radius:24px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.07);
+
+}
+
+.service-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    background:
+    rgba(244,180,0,.12);
+
+    border-radius:50%;
+
+    top:-130px;
+
+    right:-130px;
+
+}
+
+.service-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.service-card i{
+
+    font-size:2.5rem;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+}
+
+.service-card h3{
+
+    margin-bottom:12px;
+
+}
+
+.service-card p{
+
+    color:#64748b;
+
+}
+
+/* ========================================
+   SOBRE
+======================================== */
+
+.about{
+
+    padding:120px 0;
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+.about-content{
+
+    max-width:850px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+.about-content h2{
+
+    font-size:3rem;
+
+    margin-bottom:20px;
+
+}
+
+.about-content p{
+
+    line-height:1.8;
+
+    margin-bottom:20px;
+
+}
+
+.about-content ul{
+
+    list-style:none;
+
+    margin-top:30px;
+
+}
+
+.about-content li{
+
+    margin:12px 0;
+
+    font-size:1.1rem;
+
+}
+
+/* ========================================
+   AVALIAÇÕES
+======================================== */
+
+.reviews{
+
+    padding:120px 0;
+
+}
+
+.review-card{
+
+    background:white;
+
+    max-width:850px;
+
+    margin:auto;
+
+    padding:50px;
+
+    border-radius:30px;
+
+    text-align:center;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.08);
+
+}
+
+.stars{
+
+    font-size:1.6rem;
+
+    margin-bottom:20px;
+
+}
+
+.review-card p{
+
+    font-size:1.1rem;
+
+    color:#475569;
+
+    line-height:1.8;
+
+}
+
+/* ========================================
+   CONTATO
+======================================== */
+
+.contact{
+
+    padding:120px 0;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+    135deg,
+    #0D3B66,
+    #144b80
+    );
+
+    color:white;
+
+}
+
+.contact h2{
+
+    font-size:3rem;
+
+    margin-bottom:15px;
+
+}
+
+.contact p{
+
+    opacity:.9;
+
+    margin-bottom:35px;
+
+}
+
+.contact-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.contact-buttons a{
+
+    text-decoration:none;
+
+    background:white;
+
+    color:var(--primary);
+
+    font-weight:700;
+
+    padding:18px 28px;
+
+    border-radius:16px;
+
+    transition:.3s;
+
+}
+
+.contact-buttons a:hover{
+
+    transform:translateY(-5px);
+
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer{
+
+    background:var(--dark);
+
+    color:white;
+
+    padding:35px 0;
+
+    text-align:center;
+
+}
+
+/* ========================================
+   WHATSAPP FLUTUANTE
+======================================== */
+
+.floating-whatsapp{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:70px;
+
+    height:70px;
+
+    background:#25D366;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:white;
+
+    font-size:2rem;
+
+    text-decoration:none;
+
+    z-index:999;
+
+    box-shadow:
+    0 15px 35px rgba(37,211,102,.4);
+
+    animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        box-shadow:
+        0 0 0 0 rgba(37,211,102,.5);
+
+    }
+
+    70%{
+
+        box-shadow:
+        0 0 0 20px rgba(37,211,102,0);
+
+    }
+
+    100%{
+
+        box-shadow:
+        0 0 0 0 rgba(37,211,102,0);
+
+    }
+
+}
+
+/* ========================================
+   BOTÃO TOPO
+======================================== */
+
+#topBtn{
+
+    position:fixed;
+
+    right:35px;
+
+    bottom:110px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:white;
+
+    cursor:pointer;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.3s;
+
+    z-index:998;
+
+}
+
+#topBtn.visible{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
+
+/* ========================================
+   ANIMAÇÕES
+======================================== */
+
+.hidden{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+}
+
+.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    transition:.8s ease;
+
+}
+
+body.loaded .hero-content{
+
+    animation:fadeUp 1s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ========================================
+   RESPONSIVO
+======================================== */
+
+@media(max-width:1000px){
+
+    .hero-container{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+    .hero-card{
+
+        max-width:500px;
+
+        margin:auto;
+
+    }
+
+    .hero-content h1{
+
+        font-size:3rem;
+
+    }
+
+}
+
+@media(max-width:900px){
+
+    #menu-btn{
+
+        display:block;
+
+    }
+
+    #nav{
+
+        position:fixed;
+
+        top:0;
+
+        right:-100%;
+
+        width:280px;
+
+        height:100vh;
+
+        background:var(--primary);
+
+        flex-direction:column;
+
+        justify-content:center;
+
+        align-items:center;
+
+        transition:.4s;
+
+    }
+
+    #nav.active{
+
+        right:0;
+
+    }
+
+    .stats .container{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .hero-content h1{
+
+        font-size:2.3rem;
+
+    }
+
+    .section-title h2{
+
+        font-size:2rem;
+
+    }
+
+    .about-content h2{
+
+        font-size:2rem;
+
+    }
+
+    .contact h2{
+
+        font-size:2rem;
+
+    }
+
+    .review-card{
+
+        padding:30px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .hero{
+
+        padding-top:100px;
+
+    }
+
+    .btn-primary{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+    .btn-secondary{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+    .hero-actions{
+
+        flex-direction:column;
+
+    }
+
+}
